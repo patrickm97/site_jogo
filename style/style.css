@@ -1,0 +1,53 @@
+canvas {
+  border: 1px solid black;
+  display: block;
+  margin: auto;
+}
+
+.menu {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.menu li{
+  list-style: none;
+  display: inline-block;
+  }
+
+.menu li a{
+  text-decoration: none;
+  position: relative;
+  color: black;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  transition: all 0.5s;
+  padding: 15px 20px;
+}
+
+.menu li a:before {
+  content: '';
+  width: 30px;
+  position: absolute;
+  border-bottom: 4px solid black;
+  bottom: 0;
+  right: 350px;
+  transition: all 0.5s;
+}
+
+.menu li a:hover:before {
+  right:0;
+}
+
+.select {
+  background-color: #cccccc;
+  color: black;
+}
