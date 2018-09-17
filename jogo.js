@@ -74,7 +74,7 @@ function desenha(){
             x.innerHTML = "GAME OVER";
             location.reload();
         }
-        <!-- push traz novos canos a tela toda vez que o anterior chegar a um pouco antes da metade do canvas-->
+        <!-- push traz novos canos a tela toda vez que o anterior chegar até um pouco antes da metade do canvas-->
         if(cano[i].x == 145){
             cano.push({
                 x: canvas.width,
