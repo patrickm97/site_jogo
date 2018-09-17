@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="style/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>Jogo JS</title>
+    <style>
+        #button {
+            background-color: darkblue;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: absolute;
+            top: 250px;
+            left: 150px;
+            font-family: "Courier New";
+        }
+    </style>
+</head>
+<body>
+<button id="button" onclick="desenha()">INICIAR JOGO</button>
+<button id="button2"> </button>
+<div class="wrapper"> <!-- div wrapper para o site inteiro -->
+    <div class="menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="basics.html"><i class="fas fa-info"></i> COMO JOGAR</a></li>
+            <li><a href="who.html"><i class="fas fa-users"></i> QUEM SOMOS</a></li>
+            <li><a class="select" href="game.html"><i class="fas fa-gamepad"></i> O JOGO</a></li>
+            <li><a href="works.html"><i class="fas fa-code"></i> FUNCIONAMENTO</a></li>
+        </ul>
+    </div>
+    <canvas id="canvas" width="290" height="470"></canvas>
+</div>
+<script src="scripts/jogo.js"> </script>
+</body>
+</html>
