@@ -71,8 +71,12 @@ function desenha(){
         <!-- detectar colisão com o solo e com os canos -->
         if (fy + 23 >=  canvas.height - 60 || fx + 20 <= cano[i].x + canocima.width && fx + 23 >= cano[i].x && (fy + 23 >= cano[i].y + canocima.height + 85 || fy <= cano[i].y + canocima.height)) {
             let x = document.getElementById("button2");
+            <!-- aparecer a mensagem GAME OVER no botão transparente apenas com a colisão -->
             x.innerHTML = "GAME OVER";
-            location.reload();
+            <!-- período de tempo para a página resetar após o GAME OVER -->
+            function time(timeout) {
+                setTimeout("location.reload(true);",timeout);}
+            window.onload = time(200); <!-- 0.2 segundos -->
         }
         <!-- push traz novos canos a tela toda vez que o anterior chegar até um pouco antes da metade do canvas-->
         if(cano[i].x == 145){
