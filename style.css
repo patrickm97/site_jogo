@@ -54,11 +54,11 @@ body {
 
 #button2 {
     background-color: #0000;
-    font-family: "Courier New";
+    font-family: "Arial Black";
     font-size: 30px;
     position: absolute;
     top: 250px;
-    right: 150px;
+    right: 500px;
     display: inline-block;
     text-align: center;
     border: none;
