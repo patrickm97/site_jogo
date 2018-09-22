@@ -46,37 +46,37 @@ function desenha(){
     ctx.drawImage(backn,0,0);
     ctx.drawImage(mario,fx,fy,raio*2,raio*2);
     <!-- assim que o Mario é desenhado, a sua posição y é puxada para baixo constantemente -->
-    fy += 2;
+    fy += 2.2;
     ctx.fillStyle = "black";
     ctx.font = "30px Courier New";
-
+    <!-- Teclas UP e w fazem mover para cima -->
     if (keys[38] == true){
-        fy -= 5;
+        fy -= 5.5;
     }
     if (keys[87] == true){
-        fy -= 5;
+        fy -= 5.5;
     }
     <!-- usando for para mudar as posições da lista cano[i] em um loop constante -->
     for(let i = 0; i < cano.length; i++){
 
         ctx.drawImage(canocima, cano[i].x, cano[i].y);
         <!-- a diferença entre a posição y dos canos é igual a altura cano de cima + uma certa quantidade de pixels -->
-        ctx.drawImage(canobaixo, cano[i].x, cano[i].y + canocima.height + 85);
+        ctx.drawImage(canobaixo, cano[i].x, cano[i].y + canocima.height + 80);
         <!-- fazer os canos, que irão variar aleatóriamente após o primeiro, irem para a esquerda constantemente -->
         cano[i].x--;
         <!-- adiciona um ponto toda vez que passar os canos -->
-        if (cano[i].x == 7) {
+        if (cano[i].x == 6) {
             pontos += 1;
         }
         <!-- detectar colisão com o solo e com os canos -->
-        if (fy + 23 >=  canvas.height - 60 || fx + 20 <= cano[i].x + canocima.width && fx + 23 >= cano[i].x && (fy + 23 >= cano[i].y + canocima.height + 85 || fy <= cano[i].y + canocima.height)) {
+        if (fy + 23 >=  canvas.height - 60 || fx + 20 <= cano[i].x + canocima.width && fx + 23 >= cano[i].x && (fy + 23 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)) {
             let x = document.getElementById("button2");
             <!-- aparecer a mensagem GAME OVER no botão transparente apenas com a colisão -->
             x.innerHTML = "GAME OVER";
             <!-- período de tempo para a página resetar após o GAME OVER -->
             function time(timeout) {
                 setTimeout("location.reload(true);",timeout);}
-            window.onload = time(200); <!-- 0.2 segundos -->
+            window.onload = time(250); <!-- 0.25 segundos -->
         }
         <!-- push traz novos canos a tela toda vez que o anterior chegar até um pouco antes da metade do canvas-->
         if(cano[i].x == 145){
