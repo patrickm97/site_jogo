@@ -51,10 +51,10 @@ function desenha(){
     ctx.font = "30px Courier New";
     <!-- Teclas UP e w fazem mover para cima -->
     if (keys[38] == true){
-        fy -= 5.5;
+        fy -= 5.4;
     }
     if (keys[87] == true){
-        fy -= 5.5;
+        fy -= 5.4;
     }
     <!-- usando for para mudar as posições da lista cano[i] em um loop constante -->
     for(let i = 0; i < cano.length; i++){
