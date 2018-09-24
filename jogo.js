@@ -48,7 +48,7 @@ function desenha(){
     <!-- assim que o Mario é desenhado, a sua posição y é puxada para baixo constantemente -->
     fy += 2.2;
     ctx.fillStyle = "black";
-    ctx.font = "30px Courier New";
+    ctx.font = "30px Arial Black";
     <!-- Teclas UP e w fazem mover para cima -->
     if (keys[38] == true){
         fy -= 5.4;
