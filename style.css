@@ -64,6 +64,18 @@ h2 {
     font-family: "Arial Black";
 }
 
+h3 {
+    color: yellow;
+    font-size: 32px;
+    font-family: "Arial";
+}
+
+h4 {
+    color: black;
+    font-size: 22px;
+    font-family: "Arial Black";
+}
+
 #button2 {
     background-color: #0000;
     font-family: "Arial Black";
