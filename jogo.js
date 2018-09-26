@@ -51,10 +51,10 @@ function desenha(){
     ctx.font = "30px Arial Black";
     <!-- Teclas UP e w fazem mover para cima -->
     if (keys[38] == true){
-        fy -= 5.4;
+        fy -= 5.3;
     }
     if (keys[87] == true){
-        fy -= 5.4;
+        fy -= 5.3;
     }
     <!-- usando for para mudar as posições da lista cano[i] em um loop constante -->
     for(let i = 0; i < cano.length; i++){
@@ -76,7 +76,7 @@ function desenha(){
             <!-- período de tempo para a página resetar após o GAME OVER -->
             function time(timeout) {
                 setTimeout("location.reload(true);",timeout);}
-            window.onload = time(250); <!-- 0.25 segundos -->
+            window.onload = time(300); <!-- 0.3 segundos -->
         }
         <!-- push traz novos canos a tela toda vez que o anterior chegar até um pouco antes da metade do canvas-->
         if(cano[i].x == 145){
