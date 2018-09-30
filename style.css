@@ -60,7 +60,7 @@ h1 {
 
 h2 {
     color: black;
-    font-size: 23px;
+    font-size: 22px;
     font-family: "Arial Black";
 }
 
@@ -86,4 +86,19 @@ h4 {
     display: inline-block;
     text-align: center;
     border: none;
+}
+
+.works {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    font-family: "Arial Black";
+}
+
+.titulo {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    font-family: "Arial Black";
+    color: ghostwhite;
 }
