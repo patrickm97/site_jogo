@@ -18,6 +18,99 @@
         </ul>
     </div>
 </div>
+<h3>Programação do jogo em Javascript:</h3>
+<p class="titulo">Comece criando variáveis para manipular o canvas:</p>
+<p class="works">let canvas = document.getElementById("canvas");</p>
+<p class="works">let ctx = canvas.getContext("2d");</p>
+<p class="titulo">Crie variáveis para a posição inicial dos objetos na tela:</p>
+<p class="works">let fx = 10; (Posição x inicial do Mario.)</p>
+<p class="works">let fy = 145; (Posição y inicial do Mario.)</p>
+<p class="works">let raio = 23; (Atribuir um valor de raio a imagem para dominuir o seu tamanho.)</p>
+<p class="works">let keys = []; (Variável com valor de lista para atribuir as teclas desejadas.)</p>
+<p class="works">let cano = []; (Variável com valor de lista para manipular a posição dos canos.)</p>
+<p class="works">let pontos = 0; (Variável da pontuação começando em 0)</p>
+<p class="titulo">Fazendo os primeiros canos aparecerem sempre na mesma posição:</p>
+<p class="works">cano[0] = {</p>
+<p class="works">    x: canvas.width,</p>
+<p class="works">    y: 1.5</p>
+<p class="works">};</p>
+<p class="titulo">Mover para cima apenas com as teclas UP e W:</p>
+<p class="works">document.body.addEventListener("keydown" , function(e){</p>
+<p class="works">    keys[e.keyCode] = true;</p>
+<p class="works">});</p>
+<p class="works">document.body.addEventListener("keyup" , function(e){</p>
+<p class="works">    keys[e.keyCode] = false;</p>
+<p class="works">});</p>
+<p class="titulo">Função inicia apenas quando o onclick do botão 1 for executado:</p>
+<p class="works">document.getElementById("button").onclick = function() {</p>
+<p class="works">    desenha(0);</p>
+<p class="works">    return false;</p>
+<p class="works">};</p>
+<p class="titulo">Coloque todas as imagens no canvas antes de chamar a função desenha:</p>
+<p class="works">let canocima = new Image();</p>
+<p class="works">canocima.src = "canocima.png";</p>
+<p class="works">let canobaixo = new Image();</p>
+<p class="works">canobaixo.src = "canobaixo.png";</p>
+<p class="works">let backn = new Image();</p>
+<p class="works">backn.src = "backn.png";</p>
+<p class="works">let solon = new Image();</p>
+<p class="works">solon.src = "solon.png";</p>
+<p class="works">let mario = new Image();</p>
+<p class="works">mario.src = "mario.png";</p>
+<p class="titulo">Fazendo a função desenha:</p>
+<p class="works">function desenha(){</p>
+<p class="titulo">Desenhe a imagem do background e do Mario:</p>
+<p class="works">ctx.drawImage(backn,0,0);</p>
+<p class="works">ctx.drawImage(mario,fx,fy,raio*2,raio*2);</p>
+<p class="titulo">Assim que o Mario é desenhado, a sua posição y é puxada para baixo constantemente:</p>
+<p class="works">fy += 2.2;</p>
+<p class="titulo">Atribua as características ao texto da pontuação:</p>
+<p class="works">ctx.fillStyle = "black";</p>
+<p class="works">ctx.font = "30px Arial Black";</p>
+<p class="titulo">Teclas UP e w fazem movem o Mario para cima:</p>
+<p class="works">if (keys[38] == true){</p>
+<p class="works">fy -= 5.3;</p>
+<p class="works">}</p>
+<p class="works">if (keys[87] == true){</p>
+<p class="works">fy -= 5.3;</p>
+<p class="works">}</p>
+<p class="titulo">Use for para mudar as posições da lista cano[i] em um loop constante:</p>
+<p class="works">for(let i = 0; i < cano.length; i++){</p>
+<p class="works">ctx.drawImage(canocima, cano[i].x, cano[i].y);</p>
+<p class="titulo">A diferença entre a posição y dos canos é igual a altura cano de cima + uma certa quantidade de pixels:</p>
+<p class="works">ctx.drawImage(canobaixo, cano[i].x, cano[i].y + canocima.height + 80);</p>
+<p class="titulo">Faça os canos, que irão variar aleatóriamente após o primeiro, irem para a esquerda constantemente:</p>
+<p class="works">cano[i].x--;</p>
+<p class="titulo">Adiciona um ponto toda vez que o Mario passar os canos:</p>
+<p class="works">if (cano[i].x == 6) {</p>
+<p class="works">pontos += 1;</p>
+<p class="works">}</p>
+<p class="titulo">Detecte a colisão primeiro com o solo e depois com os canos:</p>
+<p class="works">if (fy + 24 >=  canvas.height - 60 || fx + 24 <= cano[i].x + canocima.width && fx + 24 >= cano[i].x && (fy + 24 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)){</p>
+<p class="titulo">Crie uma variável para o botão 2:</p>
+<p class="works">let x = document.getElementById("button2");</p>
+<p class="titulo">Faça aparecer a mensagem GAME OVER no botão 2 apenas após a colisão:</p>
+<p class="works">x.innerHTML = "GAME OVER";</p>
+<p class="titulo">Crie uma função time, para a página resetar após o GAME OVER:</p>
+<p class="works">function time(timeout) {</p>
+<p class="works">setTimeout("location.reload(true);",timeout);}</p>
+<p class="works">window.onload = time(300); (Tempo de 0.3 segundos até resetar a página.)</p>
+<p class="works">}</p>
+<p class="titulo">Use push para trazer novos canos a tela toda vez que o anterior chegar a um pouco antes da metade do canvas:</p>
+<p class="works">if(cano[i].x == 145){</p>
+<p class="works">cano.push({</p>
+<p class="works">x: canvas.width,</p>
+<p class="titulo">Use math.random gera uma altura aleatória * a altura cano de cima e depois subtrai pela altura cano de cima:</p>
+<p class="works">y: Math.floor(Math.random()* canocima.height) - canocima.height</p>
+<p class="works">})</p>
+<p class="works">}</p>
+<p class="works">}</p>
+<p class="titulo">Desenhe o solo e o texto apenas no final da função, para que eles se sobressaiam sobre os canos e o background:</p>
+<p class="works">ctx.drawImage(solon,0,canvas.height - 60);</p>
+<p class="works">ctx.fillText("Pontos: " + pontos,10,400);</p>
+<p class="titulo">Finalize a função desenha com o RequestAnimationFrame():</p>
+<p class="works">requestAnimationFrame(desenha);</p>
+<p class="works">}</p>
 <script src="scripts/jogo.js"> </script>
 </body>
 </html>
