@@ -5,9 +5,9 @@ let ctx = canvas.getContext("2d");
 let fx = 10;  <!-- posição x inicial do Mario -->
 let fy = 145;  <!-- posição y inicial do Mario -->
 let raio = 23; <!-- raio para diminuir o tamanho da imagem original do Mario -->
-let keys = [];
-let cano = [];
-let pontos = 0;
+let keys = []; <!-- lista para atribuir o valor d teclado desejado -->
+let cano = []; <!-- lista para manipular a posição dos canos -->
+let pontos = 0; <!-- pontos começando em 0 -->
 
 <!-- os primeiros canos aparecerão sempre na mesma posição -->
 cano[0] = {
@@ -69,7 +69,7 @@ function desenha(){
             pontos += 1;
         }
         <!-- detectar colisão com o solo e com os canos -->
-        if (fy + 24 >=  canvas.height - 60 || fx + 24 <= cano[i].x + canocima.width && fx + 24 >= cano[i].x && (fy + 24 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)) {
+        if (fy + 24 >=  canvas.height - 60 || fx + 24 <= cano[i].x + canocima.width && fx + 24 >= cano[i].x && (fy + 24 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)){
             let x = document.getElementById("button2");
             <!-- aparecer a mensagem GAME OVER no botão transparente apenas com a colisão -->
             x.innerHTML = "GAME OVER";
@@ -78,7 +78,7 @@ function desenha(){
                 setTimeout("location.reload(true);",timeout);}
             window.onload = time(300); <!-- 0.3 segundos -->
         }
-        <!-- push traz novos canos a tela toda vez que o anterior chegar até um pouco antes da metade do canvas-->
+        <!-- push traz novos canos a tela toda vez que o anterior chegar a um pouco antes da metade do canvas-->
         if(cano[i].x == 145){
             cano.push({
                 x: canvas.width,
@@ -89,8 +89,9 @@ function desenha(){
     }
     <!-- desenhar o solo e o texto apenas no final da função, para que eles se sobressaiam sobre os canos e o background -->
     ctx.drawImage(solon,0,canvas.height - 60);
-    ctx.fillText("Pontuação: " + pontos,10,400);
+    ctx.fillText("Pontos: " + pontos,10,400);
 
     requestAnimationFrame(desenha);
 }
+
 
