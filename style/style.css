@@ -1,0 +1,128 @@
+canvas {
+    border-style: double;
+    border-color: darkblue;
+    display: block;
+    margin: auto;
+    background-color: steelblue;
+}
+
+.menu {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 450px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.menu li a{
+    text-decoration: none;
+    position: relative;
+    color: black;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    transition: all 0.5s;
+    padding: 15px 20px;
+}
+
+.menu li a:before {
+    content: '';
+    width: 30px;
+    position: absolute;
+    border-bottom: 4px solid black;
+    bottom: 0;
+    right: 350px;
+    transition: all 0.5s;
+}
+
+.menu li a:hover:before {
+    right:0;
+}
+
+.select {
+    background-color: #cccccc;
+    color: black;
+}
+
+body {
+    background-color: orangered;
+}
+
+h1 {
+    color: yellow;
+    font-size: 32px;
+    font-family: "Arial";
+}
+
+h2 {
+    color: black;
+    font-size: 22px;
+    font-family: "Arial Black";
+}
+
+h3 {
+    color: yellow;
+    font-size: 32px;
+    font-family: "Arial";
+}
+
+h4 {
+    color: black;
+    font-size: 22px;
+    font-family: "Arial Black";
+}
+
+#button {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    font-family: "Arial Black";
+}
+
+#button2 {
+    background-color: #0000;
+    font-family: "Arial Black";
+    font-size: 30px;
+    position: absolute;
+    top: 250px;
+    right: 575px;
+    display: inline-block;
+    text-align: center;
+    border: none;
+}
+
+.works {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    font-family: "Arial Black";
+}
+
+.titulo {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    font-family: "Arial Black";
+    color: ghostwhite;
+}
