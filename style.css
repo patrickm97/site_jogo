@@ -102,3 +102,18 @@ h4 {
     font-family: "Arial Black";
     color: ghostwhite;
 }
+
+#footerbox {
+    height: 20px;
+    width: 30%;
+    background: whitesmoke;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-family: "Arial Black";
+    font-size: 18px;
+}
