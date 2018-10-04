@@ -69,7 +69,7 @@ function desenha(){
             pontos += 1;
         }
         <!-- detectar colisão com o solo e com os canos -->
-        if (fy + 24 >=  canvas.height - 60 || fx + 24 <= cano[i].x + canocima.width && fx + 24 >= cano[i].x && (fy + 24 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)){
+        if (fy + 24 >=  canvas.height - 60 || fx + 24 <= cano[i].x + canocima.width && fx + 24 >= cano[i].x && (fy + 37 >= cano[i].y + canocima.height + 80 || fy + 9 <= cano[i].y + canocima.height)){
             let x = document.getElementById("button2");
             <!-- aparecer a mensagem GAME OVER no botão transparente apenas com a colisão -->
             x.innerHTML = "GAME OVER";
